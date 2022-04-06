@@ -1,0 +1,754 @@
+
+/*There's more code than this, mostly for style, but this should be the active bit*/
+/*By default, I want the extra info to be hidden:*/
+tr.sheet-featlist {    
+	display: none;
+}
+
+
+/*But, I'd like to reveal it when the arrow is checked:*/
+input.sheet-arrow:checked ~ table tr.sheet-featlist {
+
+	display: table-row;
+
+}
+
+
+/*---------------------------------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------------------------------------------*/
+*{
+    font-family: 'Architects Daughter', cursive;
+    color:#3a4c56;
+} 
+
+select::-ms-expand {
+    display: none;
+}
+
+/* Overlay the +Add button with content text. */
+/*[data-groupname=repeating_class-ability] > button.btn.repcontrol_add::after {*/
+button.btn.repcontrol_add::after {
+    font-family:Pictos;
+    content: "p";
+    /*background-color:#000;*/
+    margin-left:-30px;
+}
+
+/* Overlay the Modify/Done button.  Overlying text is static */
+/*[data-groupname=repeating_class-ability] > button.btn.repcontrol_edit::after {*/
+button.btn.repcontrol_edit::after {
+    content: "+ Add";
+    /*background-color:#000;*/
+    margin-left:-38px;
+}
+
+
+/* this sets the formatting for all repcontrol buttons */
+.charsheet .repcontrol_add,
+.charsheet .repcontrol_edit,
+.charsheet .repcontrol_del {
+    background:#3a4c56;
+	border-radius:41px;
+	border:2px solid #0c0d0d;
+	display: block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:12px;
+	padding:3px 10px;
+	text-decoration:none;
+}
+
+.charsheet .repcontrol_add:hover,
+.charsheet .repcontrol_edit:hover,
+.charsheet .repcontrol_del:hover {
+    background-color:#265670;
+}
+
+.charsheet .repcontrol_add:active,
+.charsheet .repcontrol_edit:active,
+.charsheet .repcontrol_del:active {
+	position:relative;
+    top:1px;
+}
+.charsheet .repcontrol_add:focus,
+.charsheet .repcontrol_edit:focus,
+.charsheet .repcontrol_del:focus {
+    background-color:#2c7196;
+    outline:0px;
+	position:relative;
+	top:1px;
+}
+
+
+
+
+/*button.btn.repcontrol_edit:after {*/
+/*    outline: none;*/
+/*    content: "p";*/
+/*    margin: 0 0 0 35px;*/
+/*    font-family: Pictos;*/
+/*}*/
+
+/*button.btn.repcontrol_edit {*/
+    /* background-color: #3a4c56; */
+/*    text-indent: -70px;*/
+/*    background: #3a4c56;*/
+/*    border-radius: 41px;*/
+/*    border: 2px solid #0c0d0d;*/
+/*    display: inline-block;*/
+/*    cursor: pointer;*/
+/*    color: #ffffff;*/
+/*    font-family: Arial;*/
+/*    font-size: 12px;*/
+/*    padding: 3px 10px;*/
+/*    text-decoration: none;*/
+/*}*/
+
+/*button.btn.repcontrol_edit,*/
+/*button.btn.repcontrol_add{*/
+    /* background-color: #3a4c56; */
+/*    background: #3a4c56;*/
+/*    border-radius: 41px;*/
+/*    border: 2px solid #0c0d0d;*/
+/*    display: inline-block;*/
+/*    cursor: pointer;*/
+/*    color: #ffffff;*/
+/*    font-family: Arial;*/
+/*    font-size: 12px;*/
+/*    padding: 3px 10px;*/
+/*    text-decoration: none;*/
+/*}*/
+
+.sheet-imgTitulo {
+    max-height:50px;
+    margin-top:20px;
+    margin-left:40px;
+}
+.sheet-Titulo {
+    font-family: 'Architects Daughter', cursive;
+    font-size:50px;
+    margin-top:30px;
+}
+.sheet-SubTitulo {
+    font-family: 'Architects Daughter', cursive;
+    font-size:20px;
+    margin-top:20px;
+}
+.sheet-Content {
+    width:100%; 
+    /*margin-top:20px;*/
+    /*margin-bottom:20px;*/
+}
+.sheet-Row {
+	display: flex; 
+	align-items: flex-start;
+	justify-content: space-between;
+	width:auto;
+	/*padding:5px 35px;*/
+}
+.sheet-Box {
+	width:auto;
+	padding:0 15px;
+}
+.sheet-Box-1 { 
+	width: 8.3333333333%;
+	padding:0 15px;
+}
+.sheet-Box-2 { 
+	width: 16.6666666667%;
+	padding:0 15px;
+}
+.sheet-Box-3 { 
+	width: 25%;
+	padding:0 15px;
+}
+.sheet-Box-4 {
+	width: 33.3333333333%;
+	padding:0 15px;
+}
+.sheet-Box-5 {
+	width: 41.6666666667%;
+	padding:0 15px;
+}
+.sheet-Box-6 {
+	width: 50%;
+	padding:0 15px;
+}
+.sheet-Box-7 {
+	width: 58.3333333333%;
+	padding:0 15px;
+}
+.sheet-Box-8 {
+	width: 66.6666666667%;
+	padding:0 15px;
+}
+.sheet-Box-9 {
+	width: 75%;
+	padding:0 15px;
+}
+.sheet-Box-10 {
+	width: 83.3333333333%;
+	padding:0 15px;
+}
+.sheet-Box-11 {
+	width: 91.6666666667%;
+	padding:0 15px;
+}
+.sheet-Box-12 {
+	width: 100%;
+	padding:0 15px;
+}
+
+.sheet-Padding {
+    /*padding:5px 35px;*/
+}
+.sheet-Padding-1 {
+    padding:5px 15px;
+}
+
+.sheet-Margin1 {
+    margin:0px 2px;
+}
+/*---------------------------------------------------------*/
+/*FLEX*/
+.sheet-Flex {
+    display: flex;
+	align-items: center; 
+	justify-content: center;
+}
+.sheet-FlexStart {
+    display: flex;
+	align-items: center; 
+	justify-content: flex-start;
+}
+.sheet-FlexBtw {
+    display: flex;
+	align-items: center; 
+	justify-content: space-between;
+}
+/*---------------------------------------------------------*/
+
+.sheet-Divider {
+    width:auto;
+    height:1px;
+    background-color:black;
+    margin:20px 20px 10px 20px;
+}
+.sheet-DividerMin {
+    width:auto;
+    height:.5px;
+    background-color:black;
+    margin:5px 0;
+}
+
+.sheet-Relative {
+    position:relative
+}
+
+.sheet-Plus {
+    position: absolute;
+    right: 45px;
+    top: 5px;
+    font-weight: bold;
+}
+
+body {
+    background-color:white;
+}
+
+p {
+    font-family: 'Architects Daughter', cursive;
+    /*font-size:16px;*/
+    letter-spacing: 2px;
+	margin-bottom:0px;
+	font-weight: bold;
+	margin-right:10px;
+	color:#3A4C56;
+}
+
+.sheet-Truncate {
+    /*width:auto;*/
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.sheet-Input {
+    font-family: 'Architects Daughter', cursive;
+    text-align: center;
+	width: 90% !important;
+	/*font-size: 16px;*/
+    border-color: #000000;
+    border-style: solid;
+    border-radius:0px;
+    padding: 5px;
+    border-width: 0px 0 1px 0;
+    background-color: #c487c400;
+}
+.sheet-Input1 {
+    font-family: 'Architects Daughter', cursive;
+    text-align: center;
+	width: 80px !important;
+	/*font-size: 16px;*/
+    border-color: #000000;
+    border-style: solid;
+    border-radius:0px;
+    padding: 5px;
+    border-width: 0px 0 1px 0;
+    background-color: #c487c400;
+}
+.sheet-Input2 {
+    font-family: 'Architects Daughter', cursive;
+    text-align: center;
+	width: 50px !important;
+	/*font-size: 16px;*/
+    border-color: #000000;
+    border-style: solid;
+    border-radius:0px;
+    padding: 5px;
+    border-width: 0px 0px 0 0;
+    background-color: #c487c400;
+}
+.sheet-Input3 {
+    font-family: 'Architects Daughter', cursive;
+    /*text-align: center;*/
+	width: 90% !important;
+	/*font-size: 16px;*/
+    border-color: #000000;
+    border-style: solid;
+    border-radius:0px;
+    padding: 5px;
+    border-width: 0px 0 0px 0;
+    background-color: #c487c400;
+}
+
+.sheet-Select {
+    font-family: 'Architects Daughter', cursive;
+    /*text-align: center;*/
+	width: 55% !important;
+	/*font-size: 16px;*/
+    border-color: #000000;
+    border-style: solid;
+    border-radius:1px;
+    padding: 5px;
+    border-width: 0px 0 0px 0;
+    background-color: #c487c400;
+}
+
+/*---------------------------------------------------------------*/
+/*Buttons*/
+.sheet-ButtonTab {
+	background-color:#3a4c56;
+	border-radius:41px;
+	border:2px solid #0c0d0d;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:12px;
+	padding:3px 10px;
+	text-decoration:none;
+}
+.sheet-ButtonTab:hover {
+	background-color:#265670;
+}
+.sheet-ButtonTab:active {
+	position:relative;
+	top:1px;
+}
+.sheet-ButtonTab:focus {
+    background-color:#2c7196;
+    outline:0px;
+	position:relative;
+	top:1px;
+}
+
+.repcontainer[data-groupname="repeating_example"] > .repitem {
+    display: inline-block;
+}
+
+/*---------------------------------------------------------------*/
+
+.sheet-Body{
+    min-width:780px;
+    max-width:850px;
+}
+
+/*---------------------------------------------------------------*/
+/*Tabs*/
+.sheet-character,
+.sheet-configuration,
+.sheet-journal {
+	display: none;
+}
+
+/* show the selected tab */
+.sheet-tabstoggle[value="character"] ~ div.sheet-character,
+.sheet-tabstoggle[value="configuration"] ~ div.sheet-configuration,
+.sheet-tabstoggle[value="journal"] ~ div.sheet-journal {
+	display: block;
+}
+
+/*---------------------------------------------------------------*/
+/*VIDA*/
+/*Vida del personaje*/
+button.sheet-Life {
+    height:20px;
+    width: -webkit-fill-available;
+    background:transparent;
+    border: 0px solid black;
+}
+button.sheet-Life:focus {
+    outline: -webkit-focus-ring-color auto 0px;
+}
+
+div.sheet-v {
+    width: 100%;
+    height: 20px;
+    /*border: 1px solid green;*/
+    margin-right:3px
+}
+
+
+/*div.sheet-v1,*/
+/*div.sheet-v2,*/
+/*div.sheet-v3,*/
+/*div.sheet-v4,*/
+/*div.sheet-v5,*/
+/*div.sheet-v6,*/
+/*div.sheet-v7,*/
+/*div.sheet-v8,*/
+/*div.sheet-v9,*/
+/*div.sheet-v10,*/
+/*div.sheet-v11,*/
+/*div.sheet-v12,*/
+/*div.sheet-v13,*/
+/*div.sheet-v14,*/
+/*div.sheet-v15,*/
+/*div.sheet-v16,*/
+/*div.sheet-v17,*/
+/*div.sheet-v18,*/
+/*div.sheet-v19,*/
+/*div.sheet-v20 {*/
+/*    background-color:#000000 !important;*/
+    /*content: ' \2591';*/
+/*}*/
+
+
+
+input.sheet-v1[value="0"] ~ div.sheet-v1,
+input.sheet-v2[value="0"] ~ div.sheet-v2,
+input.sheet-v3[value="0"] ~ div.sheet-v3,
+input.sheet-v4[value="0"] ~ div.sheet-v4,
+input.sheet-v5[value="0"] ~ div.sheet-v5,
+input.sheet-v6[value="0"] ~ div.sheet-v6,
+input.sheet-v7[value="0"] ~ div.sheet-v7,
+input.sheet-v8[value="0"] ~ div.sheet-v8,
+input.sheet-v9[value="0"] ~ div.sheet-v9,
+input.sheet-v10[value="0"] ~ div.sheet-v10,
+input.sheet-v11[value="0"] ~ div.sheet-v11,
+input.sheet-v12[value="0"] ~ div.sheet-v12,
+input.sheet-v13[value="0"] ~ div.sheet-v13,
+input.sheet-v14[value="0"] ~ div.sheet-v14,
+input.sheet-v15[value="0"] ~ div.sheet-v15,
+input.sheet-v16[value="0"] ~ div.sheet-v16,
+input.sheet-v17[value="0"] ~ div.sheet-v17,
+input.sheet-v18[value="0"] ~ div.sheet-v18,
+input.sheet-v19[value="0"] ~ div.sheet-v19,
+input.sheet-v20[value="0"] ~ div.sheet-v20{
+    background-color:transparent !important;
+    /*content: ' \2591';*/
+}
+
+input.sheet-v1[value="0"] ~ div.sheet-v1:after,
+input.sheet-v2[value="0"] ~ div.sheet-v2:after,
+input.sheet-v3[value="0"] ~ div.sheet-v3:after,
+input.sheet-v4[value="0"] ~ div.sheet-v4:after,
+input.sheet-v5[value="0"] ~ div.sheet-v5:after,
+input.sheet-v6[value="0"] ~ div.sheet-v6:after,
+input.sheet-v7[value="0"] ~ div.sheet-v7:after,
+input.sheet-v8[value="0"] ~ div.sheet-v8:after,
+input.sheet-v9[value="0"] ~ div.sheet-v9:after,
+input.sheet-v10[value="0"] ~ div.sheet-v10:after,
+input.sheet-v11[value="0"] ~ div.sheet-v11:after,
+input.sheet-v12[value="0"] ~ div.sheet-v12:after,
+input.sheet-v13[value="0"] ~ div.sheet-v13:after,
+input.sheet-v14[value="0"] ~ div.sheet-v14:after,
+input.sheet-v15[value="0"] ~ div.sheet-v15:after,
+input.sheet-v16[value="0"] ~ div.sheet-v16:after,
+input.sheet-v17[value="0"] ~ div.sheet-v17:after,
+input.sheet-v18[value="0"] ~ div.sheet-v18:after,
+input.sheet-v19[value="0"] ~ div.sheet-v19:after,
+input.sheet-v20[value="0"] ~ div.sheet-v20:after{
+    background-color: transparent !important;
+    font-family: "pictos";
+    content: "*";
+    z-index: -1;
+    position: absolute;
+    margin: 1px -14px;
+}
+
+input.sheet-v1[value="1"] ~ div.sheet-v1,
+input.sheet-v2[value="1"] ~ div.sheet-v2,
+input.sheet-v3[value="1"] ~ div.sheet-v3,
+input.sheet-v4[value="1"] ~ div.sheet-v4,
+input.sheet-v5[value="1"] ~ div.sheet-v5,
+input.sheet-v6[value="1"] ~ div.sheet-v6,
+input.sheet-v7[value="1"] ~ div.sheet-v7,
+input.sheet-v8[value="1"] ~ div.sheet-v8,
+input.sheet-v9[value="1"] ~ div.sheet-v9,
+input.sheet-v10[value="1"] ~ div.sheet-v10,
+input.sheet-v11[value="1"] ~ div.sheet-v11,
+input.sheet-v12[value="1"] ~ div.sheet-v12,
+input.sheet-v13[value="1"] ~ div.sheet-v13,
+input.sheet-v14[value="1"] ~ div.sheet-v14,
+input.sheet-v15[value="1"] ~ div.sheet-v15,
+input.sheet-v16[value="1"] ~ div.sheet-v16,
+input.sheet-v17[value="1"] ~ div.sheet-v17,
+input.sheet-v18[value="1"] ~ div.sheet-v18,
+input.sheet-v19[value="1"] ~ div.sheet-v19,
+input.sheet-v20[value="1"] ~ div.sheet-v20 {
+    background-color:transparent !important;
+    /*content: ' \2592';*/
+}
+
+input.sheet-v1[value="1"] ~ div.sheet-v1:after,
+input.sheet-v2[value="1"] ~ div.sheet-v2:after,
+input.sheet-v3[value="1"] ~ div.sheet-v3:after,
+input.sheet-v4[value="1"] ~ div.sheet-v4:after,
+input.sheet-v5[value="1"] ~ div.sheet-v5:after,
+input.sheet-v6[value="1"] ~ div.sheet-v6:after,
+input.sheet-v7[value="1"] ~ div.sheet-v7:after,
+input.sheet-v8[value="1"] ~ div.sheet-v8:after,
+input.sheet-v9[value="1"] ~ div.sheet-v9:after,
+input.sheet-v10[value="1"] ~ div.sheet-v10:after,
+input.sheet-v11[value="1"] ~ div.sheet-v11:after,
+input.sheet-v12[value="1"] ~ div.sheet-v12:after,
+input.sheet-v13[value="1"] ~ div.sheet-v13:after,
+input.sheet-v14[value="1"] ~ div.sheet-v14:after,
+input.sheet-v15[value="1"] ~ div.sheet-v15:after,
+input.sheet-v16[value="1"] ~ div.sheet-v16:after,
+input.sheet-v17[value="1"] ~ div.sheet-v17:after,
+input.sheet-v18[value="1"] ~ div.sheet-v18:after,
+input.sheet-v19[value="1"] ~ div.sheet-v19:after,
+input.sheet-v20[value="1"] ~ div.sheet-v20:after {
+    background-color: transparent !important;
+    font-family: "pictos";
+    content: "k";
+    color:red;
+    z-index: -1;
+    position: absolute;
+    margin: 1px -14px;
+    /*content: ' \2592';*/
+}
+
+input.sheet-v1[value="2"] ~ div.sheet-v1,
+input.sheet-v2[value="2"] ~ div.sheet-v2,
+input.sheet-v3[value="2"] ~ div.sheet-v3,
+input.sheet-v4[value="2"] ~ div.sheet-v4,
+input.sheet-v5[value="2"] ~ div.sheet-v5,
+input.sheet-v6[value="2"] ~ div.sheet-v6,
+input.sheet-v7[value="2"] ~ div.sheet-v7,
+input.sheet-v8[value="2"] ~ div.sheet-v8,
+input.sheet-v9[value="2"] ~ div.sheet-v9,
+input.sheet-v10[value="2"] ~ div.sheet-v10,
+input.sheet-v11[value="2"] ~ div.sheet-v11,
+input.sheet-v12[value="2"] ~ div.sheet-v12,
+input.sheet-v13[value="2"] ~ div.sheet-v13,
+input.sheet-v14[value="2"] ~ div.sheet-v14,
+input.sheet-v15[value="2"] ~ div.sheet-v15,
+input.sheet-v16[value="2"] ~ div.sheet-v16,
+input.sheet-v17[value="2"] ~ div.sheet-v17,
+input.sheet-v18[value="2"] ~ div.sheet-v18,
+input.sheet-v19[value="2"] ~ div.sheet-v19,
+input.sheet-v20[value="2"] ~ div.sheet-v20 {
+    background-color:transparent !important;
+    /*content: ' \2593';*/
+}
+input.sheet-v1[value="2"] ~ div.sheet-v1:after,
+input.sheet-v2[value="2"] ~ div.sheet-v2:after,
+input.sheet-v3[value="2"] ~ div.sheet-v3:after,
+input.sheet-v4[value="2"] ~ div.sheet-v4:after,
+input.sheet-v5[value="2"] ~ div.sheet-v5:after,
+input.sheet-v6[value="2"] ~ div.sheet-v6:after,
+input.sheet-v7[value="2"] ~ div.sheet-v7:after,
+input.sheet-v8[value="2"] ~ div.sheet-v8:after,
+input.sheet-v9[value="2"] ~ div.sheet-v9:after,
+input.sheet-v10[value="2"] ~ div.sheet-v10:after,
+input.sheet-v11[value="2"] ~ div.sheet-v11:after,
+input.sheet-v12[value="2"] ~ div.sheet-v12:after,
+input.sheet-v13[value="2"] ~ div.sheet-v13:after,
+input.sheet-v14[value="2"] ~ div.sheet-v14:after,
+input.sheet-v15[value="2"] ~ div.sheet-v15:after,
+input.sheet-v16[value="2"] ~ div.sheet-v16:after,
+input.sheet-v17[value="2"] ~ div.sheet-v17:after,
+input.sheet-v18[value="2"] ~ div.sheet-v18:after,
+input.sheet-v19[value="2"] ~ div.sheet-v19:after,
+input.sheet-v20[value="2"] ~ div.sheet-v20:after {
+    background-color: transparent !important;
+    font-family: "pictos";
+    content: "k";
+    color:orange;
+    z-index: -1;
+    position: absolute;
+    margin: 1px -14px;
+    /*content: ' \2592';*/
+}
+input.sheet-v1[value="3"] ~ div.sheet-v1,
+input.sheet-v2[value="3"] ~ div.sheet-v2,
+input.sheet-v3[value="3"] ~ div.sheet-v3,
+input.sheet-v4[value="3"] ~ div.sheet-v4,
+input.sheet-v5[value="3"] ~ div.sheet-v5,
+input.sheet-v6[value="3"] ~ div.sheet-v6,
+input.sheet-v7[value="3"] ~ div.sheet-v7,
+input.sheet-v8[value="3"] ~ div.sheet-v8,
+input.sheet-v9[value="3"] ~ div.sheet-v9,
+input.sheet-v10[value="3"] ~ div.sheet-v10,
+input.sheet-v11[value="3"] ~ div.sheet-v11,
+input.sheet-v12[value="3"] ~ div.sheet-v12,
+input.sheet-v13[value="3"] ~ div.sheet-v13,
+input.sheet-v14[value="3"] ~ div.sheet-v14,
+input.sheet-v15[value="3"] ~ div.sheet-v15,
+input.sheet-v16[value="3"] ~ div.sheet-v16,
+input.sheet-v17[value="3"] ~ div.sheet-v17,
+input.sheet-v18[value="3"] ~ div.sheet-v18,
+input.sheet-v19[value="3"] ~ div.sheet-v19,
+input.sheet-v20[value="3"] ~ div.sheet-v20 {
+    background-color:transparent !important;
+    /*content: ' \2588';*/
+}
+input.sheet-v1[value="3"] ~ div.sheet-v1:after,
+input.sheet-v2[value="3"] ~ div.sheet-v2:after,
+input.sheet-v3[value="3"] ~ div.sheet-v3:after,
+input.sheet-v4[value="3"] ~ div.sheet-v4:after,
+input.sheet-v5[value="3"] ~ div.sheet-v5:after,
+input.sheet-v6[value="3"] ~ div.sheet-v6:after,
+input.sheet-v7[value="3"] ~ div.sheet-v7:after,
+input.sheet-v8[value="3"] ~ div.sheet-v8:after,
+input.sheet-v9[value="3"] ~ div.sheet-v9:after,
+input.sheet-v10[value="3"] ~ div.sheet-v10:after,
+input.sheet-v11[value="3"] ~ div.sheet-v11:after,
+input.sheet-v12[value="3"] ~ div.sheet-v12:after,
+input.sheet-v13[value="3"] ~ div.sheet-v13:after,
+input.sheet-v14[value="3"] ~ div.sheet-v14:after,
+input.sheet-v15[value="3"] ~ div.sheet-v15:after,
+input.sheet-v16[value="3"] ~ div.sheet-v16:after,
+input.sheet-v17[value="3"] ~ div.sheet-v17:after,
+input.sheet-v18[value="3"] ~ div.sheet-v18:after,
+input.sheet-v19[value="3"] ~ div.sheet-v19:after,
+input.sheet-v20[value="3"] ~ div.sheet-v20:after {
+    background-color: transparent !important;
+    font-family: "pictos";
+    content: "k";
+    color:green;
+    z-index: -1;
+    position: absolute;
+    margin: 1px -14px;
+    /*content: ' \2592';*/
+}
+
+
+
+
+/*---------------------------------------------------------------*/
+/*CHAT*/
+/*Marco de Caracteristicas*/
+.sheet-rolltemplate-caracteristicas .sheet-textCenter {
+    text-align:center;
+    padding:10px;
+}
+
+.sheet-rolltemplate-caracteristicas .sheet-container{
+    background-color:#fff3e0;
+    border-radius:5px;
+    border:solid 1px #000000;
+}
+
+.sheet-rolltemplate-caracteristicas .sheet-header{
+    padding:10px;
+    border-radius:5px 5px 0 0;
+    border:solid 1px #000000;
+    background-color:#eaeaea;
+    color:#3a4c56;
+    text-align:center;
+}
+
+.sheet-rolltemplate-caracteristicas .sheet-header .sheet-title{
+    font-size:18px;
+    font-weight:bold;
+}
+
+.sheet-rolltemplate-caracteristicas .sheet-header .sheet-title span{
+    font-size:13px;
+    /*font-weight:bold;*/
+}
+
+.sheet-rolltemplate-caracteristicas .sheet-header .sheet-subtitle{
+    font-size:12px;
+    color:#f28d6f;
+}
+
+/*Number*/
+.sheet-rolltemplate-caracteristicas .inlinerollresult  {
+	display: inline-block;
+	background-color:transparent;
+	/*min-width: 1.5em;*/
+	text-align: center;
+	border: 0px solid rgba(167, 168, 170,1);
+}
+
+.sheet-rolltemplate-caracteristicas .inlinerollresult.fullcrit {
+	border: 0px solid #3FB315;
+	
+}
+
+.sheet-rolltemplate-caracteristicas .inlinerollresult.fullfail {
+	border: 0px solid #B31515;
+}
+
+.sheet-rolltemplate-caracteristicas .inlinerollresult.importantroll {
+	border: 0px solid #4A57ED;
+}
+
+/* Allprops part */
+.sheet-rolltemplate-caracteristicas .sheet-content {
+    border-radius:0 0 5px 5px;
+    border:solid 1px #000000;
+    background: #FFF;
+    /* Header formatting - modify the column layout below */
+    /* Line height to match default roll template */
+    line-height:1.4em;
+}
+.sheet-rolltemplate-caracteristicas .sheet-content > div {
+  padding: 5px;
+}
+
+/* Left column */
+.sheet-rolltemplate-caracteristicas .sheet-content .sheet-key {
+  font-weight: bold;
+  padding-right: 10px;
+  text-align: right;
+}
+
+ /*Empty rule, use this if you want to change the right column */
+.sheet-rolltemplate-caracteristicas .sheet-value {
+    font-size:30px;
+    background-color:transparent;
+    padding:10px;
+}
+
+
+/* Make even-numbered rows grey */
+.sheet-rolltemplate-caracteristicas .sheet-content :nth-child(4n+3),
+.sheet-rolltemplate-caracteristicas .sheet-content :nth-child(4n) {
+  background:#EEE;
+}
+
+/* Description field */
+.sheet-rolltemplate-caracteristicas .sheet-desc {
+  grid-column: span 2;
+  padding: 5px;
+  text-align: center;
+}
+

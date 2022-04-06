@@ -1,0 +1,807 @@
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+</head> 
+<body class="Relative"> 
+    <div class="Body">
+        <div>
+            <img class="imgTitulo" src="https://i.pinimg.com/originals/7f/14/43/7f1443c783caf07e66431f16b821be5c.png" />
+        </div> 
+
+        <div class="Divider"></div>
+    
+        <div class="Content">
+            <div class="Row Padding-1">
+                <div class="Box-4 Flex Padding">
+                    <p>Nombre:</p>
+                    <span name="@{attr_character_name}"></span>
+                    <input type="text" name="attr_Nombre" class="Input">
+                </div>
+                <div class="Box-4 Flex Padding">
+                    <p>Profecion:</p>
+                    <input type="text" name="attr_Profecion" class="Input">
+                </div>
+                <div class="Box-4 Flex Padding"> 
+                    <p>Edad:</p>
+                    <input type="number" name="attr_Edad" class="Input">
+                </div>
+            </div>
+            <div class="Row Padding-1">
+                <div class="Box-4 Flex Padding">
+                    <p>Asti:</p>
+                    <input type="text" name="attr_Asti" class="Input">
+                </div>
+                <div class="Box-4 Flex Padding">
+                    <p>Tipo:</p>
+                    <input type="text" name="attr_Tipo" class="Input">
+                </div>
+                <div class="Box-4 Flex Padding">
+                    <p>Punah:</p>
+                    <input type="number" name="attr_Punah" class="Input">
+                </div>
+            </div>
+        </div>
+        
+        <div class="Divider"></div>
+
+        <div class="Content">
+            <div class="Row Padding-1"> 
+                <div class="Box-5 Padding-1">
+                    <h3>Caracteristicas</h3>
+                    <div class="DividerMin"></div>
+                    <div class="FlexBtw">
+                        <div class="Flex">
+                            <button type="roll" name="roll_reaction" value="&{template:caracteristicas} {{title=Fuerza ([[@{fMod}]]) }} {{subtitle=Caracteristica}} {{Resultado = [[@{fMod}d8]] }}"></button>
+                            <p class="Truncate">Fuerza:</p>
+                        </div>
+                        <div class="Relative">
+                            <input  type="number" name="attr_fQty" class="Input1" min="0" max="30">
+                            <input type="number" name="attr_fMod" value="(@{fMod})" class="Input2" min="0" max="7" readonly >
+                            <div class="Plus">+</div>
+                        </div>
+                    </div>
+                    <div class="FlexBtw">
+                        <div class="Flex">
+                            <button type="roll" name="roll_reaction" value="&{template:caracteristicas} {{title=Destreza ([[@{dMod}]]) }} {{subtitle=Caracteristica}} {{Resultado = [[@{dMod}d8]] }}"></button>
+                            <p class="Truncate">Destreza:</p>
+                        </div>
+                        <div class="Relative">
+                            <input  type="number" name="attr_dQty" class="Input1" min="0" max="30">
+                            <input type="number" name="attr_dMod" value="(@{dMod})" class="Input2" min="0" max="7" readonly >
+                            <div class="Plus">+</div>
+                        </div>
+                    </div>
+                    <div class="FlexBtw">
+                        <div class="Flex">
+                            <button type="roll" name="roll_reaction" value="&{template:caracteristicas} {{title=C. Empirico ([[@{ceMod}]]) }} {{subtitle=Caracteristica}} {{Resultado = [[@{ceMod}d8]] }}"></button>
+                            <p class="Truncate">C.Empirico:</p>
+                        </div>
+                        <div class="Relative">
+                            <input  type="number" name="attr_ceQty" class="Input1" min="0" max="30">
+                            <input type="number" name="attr_ceMod" value="(@{ceMod})" class="Input2" min="0" max="7" readonly >
+                            <div class="Plus">+</div>
+                        </div>
+                    </div>
+                    <div class="FlexBtw">
+                        <div class="Flex">
+                            <button type="roll" name="roll_reaction" value="&{template:caracteristicas} {{title=C. Abstracto ([[@{caMod}]]) }} {{subtitle=Caracteristica}} {{Resultado = [[@{caMod}d8]] }}"></button>
+                            <p class="Truncate">C.Abstracto:</p>
+                        </div>
+                        <div class="Relative">
+                            <input type="number" name="attr_caQty" class="Input1" min="0" max="30">
+                            <input type="number" name="attr_caMod" value="(@{catMod})" class="Input2" min="0" max="7" readonly >
+                            <div class="Plus">+</div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="Box-7  Padding-1">
+                    <div>
+                        <p>Vitalidad:</p>
+                        <div class="Flex">
+                            <input type="hidden" value="3" name="attr_v1" class="hidden v1">
+                            <div class="v1 v"><button type="action" name="act_v1" class="Life"></button></div>
+                            <input type="hidden" value="3" name="attr_v2" class="hidden v2">
+                            <div class="v2 v"><button type="action" name="act_v2" class="Life"></button></div>
+                            <input type="hidden" value="3" name="attr_v3" class="hidden v3">
+                            <div class="v3 v"><button type="action" name="act_v3" class="Life"></button></div>
+                            <input type="hidden" value="3" name="attr_v4" class="hidden v4">
+                            <div class="v4 v"><button type="action" name="act_v4" class="Life"></button></div>
+                            <input type="hidden" value="3" name="attr_v5" class="hidden v5">
+                            <div class="v5 v"><button type="action" name="act_v5" class="Life"></button></div>
+                            <input type="hidden" value="3" name="attr_v6" class="hidden v6">
+                            <div class="v6 v"><button type="action" name="act_v6" class="Life"></button></div>
+                            <input type="hidden" value="3" name="attr_v7" class="hidden v7">
+                            <div class="v7 v"><button type="action" name="act_v7" class="Life"></button></div>
+                            <input type="hidden" value="3" name="attr_v8" class="hidden v8">
+                            <div class="v8 v"><button type="action" name="act_v8" class="Life"></button></div>
+                            <input type="hidden" value="3" name="attr_v9" class="hidden v9">
+                            <div class="v9 v"><button type="action" name="act_v9" class="Life"></button></div>
+                            <input type="hidden" value="3" name="attr_v10" class="hidden v10">
+                            <div class="v10 v"><button type="action" name="act_v10" class="Life"></button></div>
+                            <input type="hidden" value="3" name="attr_v11" class="hidden v11">
+                            <div class="v11 v"><button type="action" name="act_v11" class="Life"></button></div>
+                            <input type="hidden" value="3" name="attr_v12" class="hidden v12">
+                            <div class="v12 v"><button type="action" name="act_v12" class="Life"></button></div>
+                            <input type="hidden" value="3" name="attr_v13" class="hidden v13">
+                            <div class="v13 v"><button type="action" name="act_v13" class="Life"></button></div>
+                            <input type="hidden" value="3" name="attr_v14" class="hidden v14">
+                            <div class="v14 v"><button type="action" name="act_v14" class="Life"></button></div>
+                            <input type="hidden" value="3" name="attr_v15" class="hidden v15">
+                            <div class="v15 v"><button type="action" name="act_v15" class="Life"></button></div>
+                            <input type="hidden" value="3" name="attr_v16" class="hidden v16">
+                            <div class="v16 v"><button type="action" name="act_v16" class="Life"></button></div>
+                            <input type="hidden" value="3" name="attr_v17" class="hidden v17">
+                            <div class="v17 v"><button type="action" name="act_v17" class="Life"></button></div>
+                            <input type="hidden" value="3" name="attr_v18" class="hidden v18">
+                            <div class="v18 v"><button type="action" name="act_v18" class="Life"></button></div>
+                            <input type="hidden" value="3" name="attr_v19" class="hidden v19">
+                            <div class="v19 v"><button type="action" name="act_v19" class="Life"></button></div>
+                            <input type="hidden" value="3" name="attr_v20" class="hidden v20">
+                            <div class="v20 v"><button type="action" name="act_v20" class="Life"></button></div>
+                        </div>
+                    </div>
+                    <!--<div class="FlexBtw">-->
+                    <!--    <p>Voluntad:</p>-->
+                    <!--    <input type="range" name="attr_Voluntad" min="0" max="20" value="5">-->
+                    <!--    <input type="hidden" name="attr_Voluntad-1" value="(@{Voluntad})">-->
+                    <!--</div>-->
+                    <!--<div class="FlexBtw">-->
+                    <!--    <p>Fe:</p>-->
+                    <!--    <input type="number" name="attr_Punah" class="Input">-->
+                    <!--</div>-->
+                    <!--<div class="FlexBtw">--> 
+                    <!--    <p>Esencia:</p>-->
+                    <!--    <input type="number" name="attr_Punah" class="Input">-->
+                    <!--</div>-->
+                </div>
+            </div>
+        </div>
+    
+        <div class="Divider"></div>
+        
+        <div>
+            <h4>Universal</h4>
+            <div class="Flex">
+                <p>Energia</p>
+                <select name="attr_Energia"> 
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="Flex">
+                <p>Viaje Astral</p>
+                <select name="attr_ViajeAstral"> 
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="Flex">
+                <p>P.E.S.</p>
+                <select name="attr_Pes"> 
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="Flex">
+                <p>Dominio</p>
+                <select name="attr_Dominio"> 
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="Flex">
+                <p>Telepatia</p>
+                <select name="attr_Telepatia"> 
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="Flex">
+                <p>Telequinesis</p>
+                <select name="attr_Telequinesis"> 
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="Divider"></div>
+        
+        <!-- ------------------------------------------------------------------------------------------------------------------------------------------------- -->
+        <!-- ------------------------------------------------------------------------------------------------------------------------------------------------- -->
+        
+        <fieldset class='repeating_edges'>            
+
+        	<br/>            
+        
+        	<!-- Checkbox to view/hide the instance. -->
+        
+        	<input type="checkbox" checked class="sheet-arrow" name="attr_EdgeHide"/><span></span>
+
+	        <h4 class='sheet-minihead'>Edge</h4> 
+        
+        	<table class='sheet-table'>                
+        
+        		<!-- Row I want to be always visible -->
+        
+        		<tr>
+        
+        			<td class='sheet-table-header'>Name:</td><td><input class='sheet-shortfield' name='attr_EdgeName' type='text'></td>
+        
+        		</tr>
+        
+        		<!-- Row I want to be able to hide -->
+        
+        		<tr class="sheet-featlist"> 
+        
+        			<td class='sheet-table-header'>Prerequisites:</td><td><input class='sheet-shortfield' name='attr_EdgePrereq' type='text'></td>
+        
+        		</tr>
+        
+        		<!-- Etc, etc. -->
+        
+        	 </table>        
+        
+        </fieldset>
+        
+        
+        <!-- ------------------------------------------------------------------------------------------------------------------------------------------------- -->
+        <!-- ------------------------------------------------------------------------------------------------------------------------------------------------- -->
+        
+        <div class="Divider"></div>
+        
+        
+        <!--<div>-->
+        <!--    <button type="action" name="act_character" >Conocimientos</button>-->
+        <!--    <button type="action" name="act_journal" >Siddhi</button>-->
+        <!--    <button type="action" name="act_configuration" >Inventario</button>-->
+        <!--</div>-->
+        <input type='hidden' class='sheet-tabstoggle' name='attr_sheetTab'  value='character'  />
+        <!--<button type="action" name="act_character" class="ButtonTab" >Conocimientos</button>-->
+        <!--<button type="action" name="act_journal" class="ButtonTab" >Siddhi</button>-->
+        <!--<button type="action" name="act_configuration" class="ButtonTab" >Inventario</button>-->
+        
+        <div class='sheet-character'>
+            <!------------------------------------------------------------------------------------------------>
+            <!--CONOCIMIENTOS-->
+            <div class="Row Padding-1"> 
+                <div class="Box-12 Padding-1">
+                    <div class="FlexBtw">
+                        <h3>Conocimientos</h3>
+                        <div>
+                            <button type="action" name="act_character" class="ButtonTab" >Conocimientos</button>
+                            <button type="action" name="act_journal" class="ButtonTab" >Siddhi</button>
+                            <button type="action" name="act_configuration" class="ButtonTab" >Inventario</button>
+                        </div>
+                    </div>
+                    <br />
+                    
+                    <fieldset class="repeating_skills" style="margin-bottom:10px;"> 
+                        <div class="Flex">
+                            <input type="text" name="attr_skillname" class="Input3" placeholder="Nombre"/> 
+                            <select name="attr_carac" class="Select Margin1"> 
+                                <option value="@{fMod}">Fuerza</option>
+                                <option value="@{dMod}">Destreza</option>
+                                <option value="@{ceMod}">C. Empirico</option>
+                                <option value="@{caMod}">C. Abstracto</option>
+                            </select>
+                            <select name="attr_Nivel" class="Select Margin1"> 
+                                <option value="0">Nocion</option>
+                                <option value="1">Principiante</option>
+                                <option value="2">Experimentado</option>
+                                <option value="3">Maestro</option>
+                            </select>
+                            <input type="text" name="attr_DescripcionConocimiento" class="Input3" placeholder="Descripcion"/> 
+                        </div>
+                    </fieldset>
+
+                    <!--<input type="hidden" name="attr_rollConocimiento" value=" &{template:caracteristicas} {{title=@{skillname} (+[[@{Nivel}+@{carac}]]) }} {{subtitle=Conocimiento}} {{descripcion=@{DescripcionConocimiento}}} {{aciertos = [[ [[@{Nivel}+@{carac}]]d8>[[({0,floor(1-abs(@{Nivel} -3))}dl1)*(4-[[({0,floor(1-abs(@{Nivel} -2))}dl1)*(5-[[({0,floor(1-abs(@{Nivel} -1))}dl1)*(6-[[({0,floor(1-abs(@{Nivel} -0))}dl1)*(7-@{Nivel} ) +@{Nivel} ]] ) +[[({0,floor(1-abs(@{Nivel} -0))}dl1)*(7-@{Nivel} ) +@{Nivel} ]] ]] ) +[[({0,floor(1-abs(@{Nivel} -1))}dl1)*(6-[[({0,floor(1-abs(@{Nivel} -0))}dl1)*(7-@{Nivel} ) +@{Nivel} ]] ) +[[({0,floor(1-abs(@{Nivel} -0))}dl1)*(7-@{Nivel} ) +@{Nivel} ]] ]] ]] ) +[[({0,floor(1-abs(@{Nivel} -2))}dl1)*(5-[[({0,floor(1-abs(@{Nivel} -1))}dl1)*(6-[[({0,floor(1-abs(@{Nivel} -0))}dl1)*(7-@{Nivel} ) +@{Nivel} ]] ) +[[({0,floor(1-abs(@{Nivel} -0))}dl1)*(7-@{Nivel} ) +@{Nivel} ]] ]] ) +[[({0,floor(1-abs(@{Nivel} -1))}dl1)*(6-[[({0,floor(1-abs(@{Nivel} -0))}dl1)*(7-@{Nivel} ) +@{Nivel} ]] ) +[[({0,floor(1-abs(@{Nivel} -0))}dl1)*(7-@{Nivel} ) +@{Nivel} ]] ]] ]] ]]  ]]}} "/> -->
+                            <!-- <button type="roll" name="roll_reaction" value="&{template:caracteristicas} {{title=@{skillname} (+[[@{Nivel}+@{carac}]]) }} {{subtitle=Conocimiento}} {{descripcion=@{DescripcionConocimiento}}} {{aciertos = [[ [[@{Nivel}+@{carac}]]d8>[[({0,floor(1-abs(@{Nivel} -3))}dl1)*(4-[[({0,floor(1-abs(@{Nivel} -2))}dl1)*(5-[[({0,floor(1-abs(@{Nivel} -1))}dl1)*(6-[[({0,floor(1-abs(@{Nivel} -0))}dl1)*(7-@{Nivel} ) +@{Nivel} ]] ) +[[({0,floor(1-abs(@{Nivel} -0))}dl1)*(7-@{Nivel} ) +@{Nivel} ]] ]] ) +[[({0,floor(1-abs(@{Nivel} -1))}dl1)*(6-[[({0,floor(1-abs(@{Nivel} -0))}dl1)*(7-@{Nivel} ) +@{Nivel} ]] ) +[[({0,floor(1-abs(@{Nivel} -0))}dl1)*(7-@{Nivel} ) +@{Nivel} ]] ]] ]] ) +[[({0,floor(1-abs(@{Nivel} -2))}dl1)*(5-[[({0,floor(1-abs(@{Nivel} -1))}dl1)*(6-[[({0,floor(1-abs(@{Nivel} -0))}dl1)*(7-@{Nivel} ) +@{Nivel} ]] ) +[[({0,floor(1-abs(@{Nivel} -0))}dl1)*(7-@{Nivel} ) +@{Nivel} ]] ]] ) +[[({0,floor(1-abs(@{Nivel} -1))}dl1)*(6-[[({0,floor(1-abs(@{Nivel} -0))}dl1)*(7-@{Nivel} ) +@{Nivel} ]] ) +[[({0,floor(1-abs(@{Nivel} -0))}dl1)*(7-@{Nivel} ) +@{Nivel} ]] ]] ]] ]]  ]]}}"></button> -->
+                    
+                    <br />
+                    <hr />
+                    <br />
+                    
+                    
+                    <!--<div class="repcontrol" data-groupname="repeating_skills">-->
+                    <!--    <button class="btn repcontrol_edit">Editar</button>-->
+                    <!--    <button class="btn repcontrol_add" style="display: inline-block;">+Agregar</button>-->
+                    <!--</div>-->
+                    <!--<div class="repcontrol" data-groupname="repeating_skills">-->
+                    <!--    <button class="btn repcontrol_edit">Editar</button>-->
+                    <!--    <button class="btn repcontrol_add">Nuevo</button>-->
+                    <!--</div>-->
+                </div>
+            </div>
+            <!------------------------------------------------------------------------------------------------>
+        </div>
+        <div class='sheet-journal'>
+            <!------------------------------------------------------------------------------------------------>
+            <!--SIDDHI-->
+            <div class="Row Padding-1"> 
+                <div class="Box-12 Padding-1">
+                    <div class="FlexBtw">
+                        <h3>Siddhi</h3>
+                        <div>
+                            <button type="action" name="act_character" class="ButtonTab" >Conocimientos</button>
+                            <button type="action" name="act_journal" class="ButtonTab" >Siddhi</button>
+                            <button type="action" name="act_configuration" class="ButtonTab" >Inventario</button>
+                        </div>
+                    </div>
+                    <br />
+                </div>
+            </div>
+            
+            <fieldset class="repeating_siddhi" style="margin-bottom:10px;"> 
+                <input type="text" name="attr_NameSiddhi" placeholder="Nombre">
+                <input type="text" name="attr_LevelSiddhi" placeholder="Nivel">
+                <select name="attr_UniversalSiddhi"> 
+                    <option value="@{Energia}">Energia</option>
+                    <option value="@ñ{ViajeAstral}">Viaje Astral</option>
+                    <option value="@{Pes}">P.E.S.</option>
+                    <option value="@{Dominio}">Dominio</option>
+                    <option value="@{Telepatia}">Telepatia</option>
+                    <option value="@{Telequinesis}">Telequinesis</option>
+                </select>
+                <input type="text" name="attr_typeUniversalSiddhi" placeholder="Energia" disabled="true">
+                <input type="text" name="attr_TiempoSiddhi" placeholder="Casting Time">
+                <input type="text" name="attr_RangoSiddhi" placeholder="Rango">
+                <input type="text" name="attr_EfectoSiddhi" placeholder="Efecto">
+                <input type="text" name="attr_DescripcionSiddhi" placeholder="Descripcion">
+                <input type="text" name="attr_CondicionSiddhi" placeholder="Condicion">
+                <button type="roll" name="roll_AttackSiddhi" value="&{template:caracteristicas} {{title=@{NameSiddhi}}}"></button>
+            </fieldset>
+            
+            <!--<textarea name="attr_import"></textarea>-->
+            <!--<fieldset class="repeating_inventory">-->
+            <!--	<input type="text" name="attr_inventory-name" placeholder="Name" value="" >-->
+            <!--	<input type="text" name="attr_inventory-description" placeholder="Description" value="">-->
+            <!--</fieldset>-->
+            
+            <script type="text/worker">
+                const fillRepeatingSection = (sectionName, data) =>
+                {
+                	let id = generateRowID();
+                	let attr = {};
+                	
+                	for(let key in data)
+                	{	
+                		console.log(key, data[key], 'to', `repeating_${sectionName}_${id}_${sectionName}-${key}`);
+                		
+                		attr[`repeating_${sectionName}_${id}_${sectionName}-${key}`] = data[key];
+                	}
+                	
+                	console.log(attr);
+                	setAttrs(attr);
+                };
+                
+                on('change:UniversalSiddhi', function(e)
+                {
+                	let testCategory = 'typeUniversalSiddhi';
+                	let testData = [];
+                    // 	testData['name'] = 'Foo';
+                    getAttrs(['UniversalSiddhi'], function(values) {
+                        if(values.UniversalSiddhi === 1){
+                    	    testData['typeUniversalSiddhi'] = 'Bar';
+                        } else {
+                    	    testData['typeUniversalSiddhi'] = 'noner';
+                        }
+                    });
+                    	
+                    // 	console.log("#####################");
+                    // 	console.log(testCategory, testData);
+                    	fillRepeatingSection(testCategory, testData);
+                });
+            	
+            </script>
+            <!------------------------------------------------------------------------------------------------>
+        </div>
+        <div class='sheet-configuration'>
+            <!------------------------------------------------------------------------------------------------>
+            <!--INVENTARIO-->
+            <div class="Row Padding-1"> 
+                <div class="Box-12 Padding-1">
+                    <div class="FlexBtw">
+                        <h3>Inventario</h3>
+                        <div>
+                            <button type="action" name="act_character" class="ButtonTab" >Conocimientos</button>
+                            <button type="action" name="act_journal" class="ButtonTab" >Siddhi</button>
+                            <button type="action" name="act_configuration" class="ButtonTab" >Inventario</button>
+                        </div>
+                    </div>
+                    <br />
+                </div>
+            </div>
+            <!------------------------------------------------------------------------------------------------>
+            <div class="gridcol3">
+                <h3 class="gridTitle">Abilities</h3>
+                <span>STR</span> <input type="number" name="attr_strength"/> <span name="attr_strengthmodifier"></span>
+                <span>INT</span> <input type="number" name="attr_intelligence"/> <span name="attr_intelligencemodifier"></span>
+                <span>WIS</span> <input type="number" name="attr_wisdom"/> <span name="attr_wisdommodifier"></span>
+                <span>DEX</span> <input type="number" name="attr_dexterity"/> <span name="attr_dexteritymodifier"></span>
+                <span>CON</span> <input type="number" name="attr_constitution"/> <span name="attr_constitutionmodifier"></span>
+                <span>CHR</span> <input type="number" name="attr_charisma"/> <span name="attr_charismamodifier"></span>
+            </div>
+            
+            <script type="text/worker">
+                // Calculates ability modifiers
+                on("change:strength change:intelligence change:wisdom change:dexterity change:constitution change:charisma", function(eventInfo) {
+                    var theAbility = eventInfo.sourceAttribute;
+                    
+                    getAttrs([theAbility], function(values) {
+                        var theAbilityValue = Object.values(values);
+                        var theAbilityMod = "";
+                        
+                        switch (Number(theAbilityValue)) {
+                            case 3: theAbilityMod = "-3"; break;
+                            case 4: case 5: theAbilityMod = "-2"; break;
+                            case 6: case 7: case 8: theAbilityMod = "-1"; break;
+                            case 9: case 10: case 11: case 12: theAbilityMod = "+0"; break;
+                            case 13: case 14: case 15: theAbilityMod = "+1"; break;
+                            case 16: case 17: theAbilityMod = "+2"; break;
+                            case 18: theAbilityMod = "+3"; break;
+                        }
+                        
+                        setAttrs({
+                            [theAbility + "modifier"] : theAbilityMod
+                        }); 
+                    });
+                });
+            </script>
+            
+            <div>
+                <h3>Weapons</h3>
+                <fieldset class="repeating_weapons">
+                    <input type="text" name="attr_weaponName"/>
+                    <span>Damage:</span> <input class="shortText60" type="text" name="attr_weapondamage"/>
+                    <span>Base Ability:</span> <select class="weaponAbility" name="attr_weaponability">
+                        <option value="strength">STR</option>
+                        <option value="dexterity">DEX</option>
+                    </select>
+                    <span>Throw:</span> <input type="text" name="attr_weaponthrow" readonly/>
+                </fieldset>
+            </div>
+            
+            <script type="text/worker">
+                on("change:repeating_weapons change:strengthmodifier change:dexteritymodifier", function() {
+                   getSectionIDs("repeating_weapons", function(idarray) {
+                        var ids = []
+                        idarray.forEach(id => ids.push('repeating_weapons_' + id + '_weaponability'));
+                        console.log(ids)
+                        getAttrs([...ids, 'strengthmodifier', 'dexteritymodifier'], function (values) {
+                            const output = {};
+                            // const which = event.sourceAttribute;
+                            const stats = {
+                                dexterity: Number(values["dexteritymodifier"]) || 0,
+                                strength: Number(values["strengthmodifier"]) || 0
+                            };
+                            
+                            console.log(values)
+                            // const weapondamage = Number(values.weapondamage) || 0;
+                            idarray.forEach(id => {
+                                // loop through the repeating section, and check which stat the weapon uses
+                                const thisability = values['repeating_weapons_' + id + '_weaponability'];
+                                // if the change was caused by attackthrow, or the weapon's stat is the one that just changed, update its value
+                                // if(which === 'attackthrow' || thisability === which) {
+                                // console.log(values.['repeating_weapons_' + id + '_weaponthrow'])
+                                // console.log(stats[thisability] + weapondamage)
+                                    // output['repeating_weapons_' + id + '_weaponthrow'] = stats[thisability] + weapondamage;
+                                // }
+                                // output = {['repeating_weapons_' + id + '_weaponthrow'] = values['repeating_weapons_' + id + '_weapondamage']}
+                                // console.log(['repeating_weapons_' + id + '_weaponthrow'])
+                                console.log(values['repeating_weapons_' + id + '_weapondamage'])
+                                console.log(values['repeating_weapons_' + id + '_weaponthrow'])
+                            });
+                            // setAttrs(output);
+                            // setAttrs(output);
+                        });
+                   });
+                });
+            </script>
+            
+            <!------------------------------------------------------------------------------------------------>
+        </div>
+        
+        <script type="text/worker">
+            const buttonlist = ["character","journal","configuration"];
+            buttonlist.forEach(button => {
+                on(`clicked:${button}`, function() {
+                    setAttrs({
+                        sheetTab: button
+                    });
+                });
+            });
+        </script>
+        
+    </div>
+    
+    <rolltemplate class="sheet-rolltemplate-SiddhiAttack">
+      <div class="sheet-container">
+        <div class="sheet-header sheet-Flex">
+            <div>
+              {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+              {{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+            </div>
+        </div>
+        <div class="sheet-content">
+            <!--{{#aciertos}}-->
+            <!--    <div class="sheet-Flex sheet-value">-->
+            <!--        <div class="sheet-textCenter">{{aciertos}}</div>-->
+            <!--    </div>-->
+            <!--{{/aciertos}}-->
+            {{#allprops() title subtitle desc color}}
+            <div class="sheet-Flex">
+                <div>{{value}}</div>
+            </div>
+            {{/allprops() title subtitle desc color}}
+            {{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}
+        </div>
+      </div>
+    </rolltemplate>
+
+    <rolltemplate class="sheet-rolltemplate-caracteristicas">
+      <div class="sheet-container">
+        <div class="sheet-header sheet-Flex">
+            <div>
+              {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+              {{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+            </div>
+        </div>
+        <div class="sheet-content">
+            {{#aciertos}}
+                <div class="sheet-Flex sheet-value">
+                    <div class="sheet-textCenter">{{aciertos}}</div>
+                </div>
+            {{/aciertos}}
+            {{#allprops() title subtitle desc color}}
+            <div class="sheet-Flex">
+                <div>{{value}}</div>
+            </div>
+            {{/allprops() title subtitle desc color}}
+            {{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}
+        </div>
+      </div>
+    </rolltemplate>
+    
+</body>
+
+<script type="text/worker">
+    // -------------------------------------------------------------------------
+    // VITALIDAD
+    on('clicked:v1', function(e) {
+        getAttrs(['v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8', 'v9', 'v10', 'v11', 'v12', 'v13', 'v14', 'v15', 'v16', 'v17', 'v18', 'v19', 'v20'], function(values) {
+            var vnew
+            values.v1 == "3" ? vnew = "2" : values.v1 == "2" ? vnew = "1" :  values.v1 == "1" ? vnew = "0" : values.v1 == "0" ? vnew = "3" : vnew = "3"
+            var vita = (parseInt(vnew) + parseInt(values.v2) + parseInt(values.v3) + parseInt(values.v4) + parseInt(values.v5) + parseInt(values.v6) + parseInt(values.v7) + parseInt(values.v8) + parseInt(values.v9) + parseInt(values.v10) + parseInt(values.v11) + parseInt(values.v12) + parseInt(values.v13) + parseInt(values.v14) + parseInt(values.v15) + parseInt(values.v16) + parseInt(values.v17) + parseInt(values.v18) + parseInt(values.v19) + parseInt(values.v20))
+            setAttrs({ v1: vnew }); 
+            setAttrs({ vitalidad: vita }); 
+        });
+    });
+    on('clicked:v2', function(e) {
+        getAttrs(['v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8', 'v9', 'v10', 'v11', 'v12', 'v13', 'v14', 'v15', 'v16', 'v17', 'v18', 'v19', 'v20'], function(values) {
+            var vnew
+            values.v2 == "3" ? vnew = "2" : values.v2 == "2" ? vnew = "1" :  values.v2 == "1" ? vnew = "0" : values.v2 == "0" ? vnew = "3" : vnew = "3"
+            var vita = (parseInt(values.v1) + parseInt(vnew) + parseInt(values.v3) + parseInt(values.v4) + parseInt(values.v5) + parseInt(values.v6) + parseInt(values.v7) + parseInt(values.v8) + parseInt(values.v9) + parseInt(values.v10) + parseInt(values.v11) + parseInt(values.v12) + parseInt(values.v13) + parseInt(values.v14) + parseInt(values.v15) + parseInt(values.v16) + parseInt(values.v17) + parseInt(values.v18) + parseInt(values.v19) + parseInt(values.v20))
+            setAttrs({ v2: vnew }); 
+            setAttrs({ vitalidad: vita }); 
+        });
+    });
+    on('clicked:v3', function(e) {
+        getAttrs(['v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8', 'v9', 'v10', 'v11', 'v12', 'v13', 'v14', 'v15', 'v16', 'v17', 'v18', 'v19', 'v20'], function(values) {
+            var vnew
+            values.v3 == "3" ? vnew = "2" : values.v3 == "2" ? vnew = "1" :  values.v3 == "1" ? vnew = "0" : values.v3 == "0" ? vnew = "3" : vnew = "3"
+            var vita = (parseInt(values.v1) + parseInt(values.v2) + parseInt(vnew) + parseInt(values.v4) + parseInt(values.v5) + parseInt(values.v6) + parseInt(values.v7) + parseInt(values.v8) + parseInt(values.v9) + parseInt(values.v10) + parseInt(values.v11) + parseInt(values.v12) + parseInt(values.v13) + parseInt(values.v14) + parseInt(values.v15) + parseInt(values.v16) + parseInt(values.v17) + parseInt(values.v18) + parseInt(values.v19) + parseInt(values.v20))
+            setAttrs({ v3: vnew }); 
+            setAttrs({ vitalidad: vita }); 
+        });
+    });
+    on('clicked:v4', function(e) {
+        getAttrs(['v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8', 'v9', 'v10', 'v11', 'v12', 'v13', 'v14', 'v15', 'v16', 'v17', 'v18', 'v19', 'v20'], function(values) {
+            var vnew
+            values.v4 == "3" ? vnew = "2" : values.v4 == "2" ? vnew = "1" :  values.v4 == "1" ? vnew = "0" : values.v4 == "0" ? vnew = "3" : vnew = "3"
+            var vita = (parseInt(values.v1) + parseInt(values.v2) + parseInt(values.v3) + parseInt(vnew) + parseInt(values.v5) + parseInt(values.v6) + parseInt(values.v7) + parseInt(values.v8) + parseInt(values.v9) + parseInt(values.v10) + parseInt(values.v11) + parseInt(values.v12) + parseInt(values.v13) + parseInt(values.v14) + parseInt(values.v15) + parseInt(values.v16) + parseInt(values.v17) + parseInt(values.v18) + parseInt(values.v19) + parseInt(values.v20))
+            setAttrs({ v4: vnew }); 
+            setAttrs({ vitalidad: vita }); 
+        });
+    });
+    on('clicked:v5', function(e) {
+        getAttrs(['v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8', 'v9', 'v10', 'v11', 'v12', 'v13', 'v14', 'v15', 'v16', 'v17', 'v18', 'v19', 'v20'], function(values) {
+            var vnew
+            values.v5 == "3" ? vnew = "2" : values.v5 == "2" ? vnew = "1" :  values.v5 == "1" ? vnew = "0" : values.v5 == "0" ? vnew = "3" : vnew = "3"
+            var vita = (parseInt(values.v1) + parseInt(values.v2) + parseInt(values.v3) + parseInt(values.v4) + parseInt(vnew) + parseInt(values.v6) + parseInt(values.v7) + parseInt(values.v8) + parseInt(values.v9) + parseInt(values.v10) + parseInt(values.v11) + parseInt(values.v12) + parseInt(values.v13) + parseInt(values.v14) + parseInt(values.v15) + parseInt(values.v16) + parseInt(values.v17) + parseInt(values.v18) + parseInt(values.v19) + parseInt(values.v20))
+            setAttrs({ v5: vnew }); 
+            setAttrs({ vitalidad: vita }); 
+        });
+    });
+    on('clicked:v6', function(e) {
+        getAttrs(['v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8', 'v9', 'v10', 'v11', 'v12', 'v13', 'v14', 'v15', 'v16', 'v17', 'v18', 'v19', 'v20'], function(values) {
+            var vnew
+            values.v6 == "3" ? vnew = "2" : values.v6 == "2" ? vnew = "1" :  values.v6 == "1" ? vnew = "0" : values.v6 == "0" ? vnew = "3" : vnew = "3"
+            var vita = (parseInt(values.v1) + parseInt(values.v2) + parseInt(values.v3) + parseInt(values.v4) + parseInt(values.v5) + parseInt(vnew) + parseInt(values.v7) + parseInt(values.v8) + parseInt(values.v9) + parseInt(values.v10) + parseInt(values.v11) + parseInt(values.v12) + parseInt(values.v13) + parseInt(values.v14) + parseInt(values.v15) + parseInt(values.v16) + parseInt(values.v17) + parseInt(values.v18) + parseInt(values.v19) + parseInt(values.v20))
+            setAttrs({ v6: vnew }); 
+            setAttrs({ vitalidad: vita }); 
+        });
+    });
+    on('clicked:v7', function(e) {
+        getAttrs(['v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8', 'v9', 'v10', 'v11', 'v12', 'v13', 'v14', 'v15', 'v16', 'v17', 'v18', 'v19', 'v20'], function(values) {
+            var vnew
+            values.v7 == "3" ? vnew = "2" : values.v7 == "2" ? vnew = "1" :  values.v7 == "1" ? vnew = "0" : values.v7 == "0" ? vnew = "3" : vnew = "3"
+            var vita = (parseInt(values.v1) + parseInt(values.v2) + parseInt(values.v3) + parseInt(values.v4) + parseInt(values.v5) + parseInt(values.v6) + parseInt(vnew) + parseInt(values.v8) + parseInt(values.v9) + parseInt(values.v10) + parseInt(values.v11) + parseInt(values.v12) + parseInt(values.v13) + parseInt(values.v14) + parseInt(values.v15) + parseInt(values.v16) + parseInt(values.v17) + parseInt(values.v18) + parseInt(values.v19) + parseInt(values.v20))
+            setAttrs({ v7: vnew }); 
+            setAttrs({ vitalidad: vita }); 
+        });
+    });
+    on('clicked:v8', function(e) {
+        getAttrs(['v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8', 'v9', 'v10', 'v11', 'v12', 'v13', 'v14', 'v15', 'v16', 'v17', 'v18', 'v19', 'v20'], function(values) {
+            var vnew
+            values.v8 == "3" ? vnew = "2" : values.v8 == "2" ? vnew = "1" :  values.v8 == "1" ? vnew = "0" : values.v8 == "0" ? vnew = "3" : vnew = "3"
+            var vita = (parseInt(values.v1) + parseInt(values.v2) + parseInt(values.v3) + parseInt(values.v4) + parseInt(values.v5) + parseInt(values.v6) + parseInt(values.v7) + parseInt(vnew) + parseInt(values.v9) + parseInt(values.v10) + parseInt(values.v11) + parseInt(values.v12) + parseInt(values.v13) + parseInt(values.v14) + parseInt(values.v15) + parseInt(values.v16) + parseInt(values.v17) + parseInt(values.v18) + parseInt(values.v19) + parseInt(values.v20))
+            setAttrs({ v8: vnew }); 
+            setAttrs({ vitalidad: vita }); 
+        });
+    });
+    on('clicked:v9', function(e) {
+        getAttrs(['v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8', 'v9', 'v10', 'v11', 'v12', 'v13', 'v14', 'v15', 'v16', 'v17', 'v18', 'v19', 'v20'], function(values) {
+            var vnew
+            values.v9 == "3" ? vnew = "2" : values.v9 == "2" ? vnew = "1" :  values.v9 == "1" ? vnew = "0" : values.v9 == "0" ? vnew = "3" : vnew = "3"
+            var vita = (parseInt(values.v1) + parseInt(values.v2) + parseInt(values.v3) + parseInt(values.v4) + parseInt(values.v5) + parseInt(values.v6) + parseInt(values.v7) + parseInt(values.v8) + parseInt(vnew) + parseInt(values.v10) + parseInt(values.v11) + parseInt(values.v12) + parseInt(values.v13) + parseInt(values.v14) + parseInt(values.v15) + parseInt(values.v16) + parseInt(values.v17) + parseInt(values.v18) + parseInt(values.v19) + parseInt(values.v20))
+            setAttrs({ v9: vnew }); 
+            setAttrs({ vitalidad: vita }); 
+        });
+    });
+    on('clicked:v10', function(e) {
+        getAttrs(['v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8', 'v9', 'v10', 'v11', 'v12', 'v13', 'v14', 'v15', 'v16', 'v17', 'v18', 'v19', 'v20'], function(values) {
+            var vnew
+            values.v10 == "3" ? vnew = "2" : values.v10 == "2" ? vnew = "1" :  values.v10 == "1" ? vnew = "0" : values.v10 == "0" ? vnew = "3" : vnew = "3"
+            var vita = (parseInt(values.v1) + parseInt(values.v2) + parseInt(values.v3) + parseInt(values.v4) + parseInt(values.v5) + parseInt(values.v6) + parseInt(values.v7) + parseInt(values.v8) + parseInt(values.v9) + parseInt(vnew) + parseInt(values.v11) + parseInt(values.v12) + parseInt(values.v13) + parseInt(values.v14) + parseInt(values.v15) + parseInt(values.v16) + parseInt(values.v17) + parseInt(values.v18) + parseInt(values.v19) + parseInt(values.v20))
+            setAttrs({ v10: vnew }); 
+            setAttrs({ vitalidad: vita }); 
+        });
+    });
+    on('clicked:v11', function(e) {
+        getAttrs(['v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8', 'v9', 'v10', 'v11', 'v12', 'v13', 'v14', 'v15', 'v16', 'v17', 'v18', 'v19', 'v20'], function(values) {
+            var vnew
+            values.v11 == "3" ? vnew = "2" : values.v11 == "2" ? vnew = "1" :  values.v11 == "1" ? vnew = "0" : values.v11 == "0" ? vnew = "3" : vnew = "3"
+            var vita = (parseInt(values.v1) + parseInt(values.v2) + parseInt(values.v3) + parseInt(values.v4) + parseInt(values.v5) + parseInt(values.v6) + parseInt(values.v7) + parseInt(values.v8) + parseInt(values.v9) + parseInt(values.v10) + parseInt(vnew) + parseInt(values.v12) + parseInt(values.v13) + parseInt(values.v14) + parseInt(values.v15) + parseInt(values.v16) + parseInt(values.v17) + parseInt(values.v18) + parseInt(values.v19) + parseInt(values.v20))
+            setAttrs({ v11: vnew }); 
+            setAttrs({ vitalidad: vita }); 
+        });
+    });
+    on('clicked:v12', function(e) {
+        getAttrs(['v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8', 'v9', 'v10', 'v11', 'v12', 'v13', 'v14', 'v15', 'v16', 'v17', 'v18', 'v19', 'v20'], function(values) {
+            var vnew
+            values.v12 == "3" ? vnew = "2" : values.v12 == "2" ? vnew = "1" :  values.v12 == "1" ? vnew = "0" : values.v12 == "0" ? vnew = "3" : vnew = "3"
+            var vita = (parseInt(values.v1) + parseInt(values.v2) + parseInt(values.v3) + parseInt(values.v4) + parseInt(values.v5) + parseInt(values.v6) + parseInt(values.v7) + parseInt(values.v8) + parseInt(values.v9) + parseInt(values.v10) + parseInt(values.v11) + parseInt(vnew) + parseInt(values.v13) + parseInt(values.v14) + parseInt(values.v15) + parseInt(values.v16) + parseInt(values.v17) + parseInt(values.v18) + parseInt(values.v19) + parseInt(values.v20))
+            setAttrs({ v12: vnew }); 
+            setAttrs({ vitalidad: vita }); 
+        });
+    });
+    on('clicked:v13', function(e) {
+        getAttrs(['v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8', 'v9', 'v10', 'v11', 'v12', 'v13', 'v14', 'v15', 'v16', 'v17', 'v18', 'v19', 'v20'], function(values) {
+            var vnew
+            values.v13 == "3" ? vnew = "2" : values.v13 == "2" ? vnew = "1" :  values.v13 == "1" ? vnew = "0" : values.v13 == "0" ? vnew = "3" : vnew = "3"
+            var vita = (parseInt(values.v1) + parseInt(values.v2) + parseInt(values.v3) + parseInt(values.v4) + parseInt(values.v5) + parseInt(values.v6) + parseInt(values.v7) + parseInt(values.v8) + parseInt(values.v9) + parseInt(values.v10) + parseInt(values.v11) + parseInt(values.v12) + parseInt(vnew) + parseInt(values.v14) + parseInt(values.v15) + parseInt(values.v16) + parseInt(values.v17) + parseInt(values.v18) + parseInt(values.v19) + parseInt(values.v20))
+            setAttrs({ v13: vnew }); 
+            setAttrs({ vitalidad: vita }); 
+        });
+    });
+    on('clicked:v14', function(e) {
+        getAttrs(['v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8', 'v9', 'v10', 'v11', 'v12', 'v13', 'v14', 'v15', 'v16', 'v17', 'v18', 'v19', 'v20'], function(values) {
+            var vnew
+            values.v14 == "3" ? vnew = "2" : values.v14 == "2" ? vnew = "1" :  values.v14 == "1" ? vnew = "0" : values.v14 == "0" ? vnew = "3" : vnew = "3"
+            var vita = (parseInt(values.v1) + parseInt(values.v2) + parseInt(values.v3) + parseInt(values.v4) + parseInt(values.v5) + parseInt(values.v6) + parseInt(values.v7) + parseInt(values.v8) + parseInt(values.v9) + parseInt(values.v10) + parseInt(values.v11) + parseInt(values.v12) + parseInt(values.v13) + parseInt(vnew) + parseInt(values.v15) + parseInt(values.v16) + parseInt(values.v17) + parseInt(values.v18) + parseInt(values.v19) + parseInt(values.v20))
+            setAttrs({ v14: vnew }); 
+            setAttrs({ vitalidad: vita }); 
+        });
+    });
+    on('clicked:v15', function(e) {
+        getAttrs(['v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8', 'v9', 'v10', 'v11', 'v12', 'v13', 'v14', 'v15', 'v16', 'v17', 'v18', 'v19', 'v20'], function(values) {
+            var vnew
+            values.v15 == "3" ? vnew = "2" : values.v15 == "2" ? vnew = "1" :  values.v15 == "1" ? vnew = "0" : values.v15 == "0" ? vnew = "3" : vnew = "3"
+            var vita = (parseInt(values.v1) + parseInt(values.v2) + parseInt(values.v3) + parseInt(values.v4) + parseInt(values.v5) + parseInt(values.v6) + parseInt(values.v7) + parseInt(values.v8) + parseInt(values.v9) + parseInt(values.v10) + parseInt(values.v11) + parseInt(values.v12) + parseInt(values.v13) + parseInt(values.v14) + parseInt(vnew) + parseInt(values.v16) + parseInt(values.v17) + parseInt(values.v18) + parseInt(values.v19) + parseInt(values.v20))
+            setAttrs({ v15: vnew }); 
+            setAttrs({ vitalidad: vita }); 
+        });
+    });
+    on('clicked:v16', function(e) {
+        getAttrs(['v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8', 'v9', 'v10', 'v11', 'v12', 'v13', 'v14', 'v15', 'v16', 'v17', 'v18', 'v19', 'v20'], function(values) {
+            var vnew
+            values.v16 == "3" ? vnew = "2" : values.v16 == "2" ? vnew = "1" :  values.v16 == "1" ? vnew = "0" : values.v16 == "0" ? vnew = "3" : vnew = "3"
+            var vita = (parseInt(values.v1) + parseInt(values.v2) + parseInt(values.v3) + parseInt(values.v4) + parseInt(values.v5) + parseInt(values.v6) + parseInt(values.v7) + parseInt(values.v8) + parseInt(values.v9) + parseInt(values.v10) + parseInt(values.v11) + parseInt(values.v12) + parseInt(values.v13) + parseInt(values.v14) + parseInt(values.v15) + parseInt(vnew) + parseInt(values.v17) + parseInt(values.v18) + parseInt(values.v19) + parseInt(values.v20))
+            setAttrs({ v16: vnew }); 
+            setAttrs({ vitalidad: vita }); 
+        });
+    });
+    on('clicked:v17', function(e) {
+        getAttrs(['v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8', 'v9', 'v10', 'v11', 'v12', 'v13', 'v14', 'v15', 'v16', 'v17', 'v18', 'v19', 'v20'], function(values) {
+            var vnew
+            values.v17 == "3" ? vnew = "2" : values.v17 == "2" ? vnew = "1" :  values.v17 == "1" ? vnew = "0" : values.v17 == "0" ? vnew = "3" : vnew = "3"
+            var vita = (parseInt(values.v1) + parseInt(values.v2) + parseInt(values.v3) + parseInt(values.v4) + parseInt(values.v5) + parseInt(values.v6) + parseInt(values.v7) + parseInt(values.v8) + parseInt(values.v9) + parseInt(values.v10) + parseInt(values.v11) + parseInt(values.v12) + parseInt(values.v13) + parseInt(values.v14) + parseInt(values.v15) + parseInt(values.v16) + parseInt(vnew) + parseInt(values.v18) + parseInt(values.v19) + parseInt(values.v20))
+            setAttrs({ v17: vnew }); 
+            setAttrs({ vitalidad: vita }); 
+        });
+    });
+    on('clicked:v18', function(e) {
+        getAttrs(['v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8', 'v9', 'v10', 'v11', 'v12', 'v13', 'v14', 'v15', 'v16', 'v17', 'v18', 'v19', 'v20'], function(values) {
+            var vnew
+            values.v18 == "3" ? vnew = "2" : values.v18 == "2" ? vnew = "1" :  values.v18 == "1" ? vnew = "0" : values.v18 == "0" ? vnew = "3" : vnew = "3"
+            var vita = (parseInt(values.v1) + parseInt(values.v2) + parseInt(values.v3) + parseInt(values.v4) + parseInt(values.v5) + parseInt(values.v6) + parseInt(values.v7) + parseInt(values.v8) + parseInt(values.v9) + parseInt(values.v10) + parseInt(values.v11) + parseInt(values.v12) + parseInt(values.v13) + parseInt(values.v14) + parseInt(values.v15) + parseInt(values.v16) + parseInt(values.v17) + parseInt(vnew) + parseInt(values.v19) + parseInt(values.v20))
+            setAttrs({ v18: vnew }); 
+            setAttrs({ vitalidad: vita }); 
+        });
+    });
+    on('clicked:v19', function(e) {
+        getAttrs(['v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8', 'v9', 'v10', 'v11', 'v12', 'v13', 'v14', 'v15', 'v16', 'v17', 'v18', 'v19', 'v20'], function(values) {
+            var vnew
+            values.v19 == "3" ? vnew = "2" : values.v19 == "2" ? vnew = "1" :  values.v19 == "1" ? vnew = "0" : values.v19 == "0" ? vnew = "3" : vnew = "3"
+            var vita = (parseInt(values.v1) + parseInt(values.v2) + parseInt(values.v3) + parseInt(values.v4) + parseInt(values.v5) + parseInt(values.v6) + parseInt(values.v7) + parseInt(values.v8) + parseInt(values.v9) + parseInt(values.v10) + parseInt(values.v11) + parseInt(values.v12) + parseInt(values.v13) + parseInt(values.v14) + parseInt(values.v15) + parseInt(values.v16) + parseInt(values.v17) + parseInt(values.v18) + parseInt(vnew) + parseInt(values.v20))
+            setAttrs({ v19: vnew }); 
+            setAttrs({ vitalidad: vita }); 
+        });
+    });
+    on('clicked:v20', function(e) {
+        getAttrs(['v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8', 'v9', 'v10', 'v11', 'v12', 'v13', 'v14', 'v15', 'v16', 'v17', 'v18', 'v19', 'v20'], function(values) {
+            var vnew
+            values.v20 == "3" ? vnew = "2" : values.v20 == "2" ? vnew = "1" :  values.v20 == "1" ? vnew = "0" : values.v20 == "0" ? vnew = "3" : vnew = "3"
+            var vita = (parseInt(values.v1) + parseInt(values.v2) + parseInt(values.v3) + parseInt(values.v4) + parseInt(values.v5) + parseInt(values.v6) + parseInt(values.v7) + parseInt(values.v8) + parseInt(values.v9) + parseInt(values.v10) + parseInt(values.v11) + parseInt(values.v12) + parseInt(values.v13) + parseInt(values.v14) + parseInt(values.v15) + parseInt(values.v16) + parseInt(values.v17) + parseInt(values.v18) + parseInt(values.v19) + parseInt(vnew))
+            setAttrs({ v20: vnew }); 
+            setAttrs({ vitalidad: vita }); 
+        });
+    });
+    // -------------------------------------------------------------------------
+</script>       
+<script type="text/worker">
+    on("change:caQty change:ceQty change:dQty change:fQty", function() {
+        getAttrs(["caQty", "ceQty", "dQty", "fQty"], function(values) {
+            let vca = values["caQty"]
+            let vce = values["ceQty"]
+            let vd = values["dQty"]
+            let vf = values["fQty"]
+            
+            let caM = vca <= 8 ? 0 : vca <= 11 ? 1 : vca <= 14 ? 2 : vca <= 17 ? 3 : vca <= 20 ? 4 : vca <= 23 ? 5 : vca <= 26 ? 6 : vca <= 30 ? 7 : 0
+            let ceM = vce <= 8 ? 0 : vce <= 11 ? 1 : vce <= 14 ? 2 : vce <= 17 ? 3 : vce <= 20 ? 4 : vce <= 23 ? 5 : vce <= 26 ? 6 : vce <= 30 ? 7 : 0
+            let dM = vd <= 8 ? 0 : vd <= 11 ? 1 : vd <= 14 ? 2 : vd <= 17 ? 3 : vd <= 20 ? 4 : vd <= 23 ? 5 : vd <= 26 ? 6 : vd <= 30 ? 7 : 0
+            let fM = vf <= 8 ? 0 : vf <= 11 ? 1 : vf <= 14 ? 2 : vf <= 17 ? 3 : vf <= 20 ? 4 : vf <= 23 ? 5 : vf <= 26 ? 6 : vf <= 30 ? 7 : 0
+            
+            setAttrs({
+                caMod: parseInt(caM)
+            });
+            setAttrs({
+                ceMod: parseInt(ceM)
+            });
+            setAttrs({
+                dMod: parseInt(dM)
+            });
+            setAttrs({
+                fMod: parseInt(fM)
+            });
+          //Do something with values.Strength and/or values[ "Level" ]
+       });
+    });
+</script>
+
